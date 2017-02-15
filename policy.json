@@ -1,0 +1,11 @@
+{
+"expiration": "2017-09-28T12:00:00.000Z",
+	  "conditions": [
+	   {"bucket": "adud-dir1"},
+	   ["starts-with", "$key", ""],
+	   {"acl": "private"},
+	   {"x-amz-credential": "AKIAJUOIMJZUC7YM2SSQ/20170207/eu-central-1/s3/aws4_request"},
+	   {"x-amz-algorithm": "AWS4-HMAC-SHA256"},
+	   {"x-amz-date": "20170216T000000Z" }
+	  ]
+}

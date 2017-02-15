@@ -1,0 +1,27 @@
+{
+  "name": "NodeProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MarCovy/AWS_ProjectWEB.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MarCovy/AWS_ProjectWEB/issues"
+  },
+  "homepage": "https://github.com/MarCovy/AWS_ProjectWEB",
+  "dependencies" : {
+    "webs-weeia": "0.0.2",
+    "queuemanager": "^0.2.6",
+    "async": "^0.2.10",
+    "aws-sdk": "^2.1.20",
+    "ejs": "^1.0.0",
+    "moment": "^2.5.1"
+  }
+}

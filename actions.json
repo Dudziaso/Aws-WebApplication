@@ -1,0 +1,5 @@
+[
+	{"path":"/","action":"index"},
+	{"path":"/list", "action":"list"},
+	{"path":"/send", "action":"send"}
+]

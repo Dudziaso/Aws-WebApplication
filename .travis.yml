@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.10'
+before_install: npm install -g mocha
+deploy:
+  provider: s3
+  access_key_id: AKIAJTEKRJV6A3FQRRVA
+  secret_access_key:
+    secure: WunP3RTdwB8kTZUUcn95odI2ktHkmrCZRn0DdMVLUn4MHgy7uDGViTcus8xYU0CP9S/AjdvUzRHvxPZ+zof/mVOvVWOcr2goK0Ox437hcAov9rjcBl+oDrGB/knZpinGcVrhDgGSl9ZUfBcUe33YGSttDfjeFwrrdYyQTQSKUJCHDxBeeIJzcV5P41ia3Jn6PPRRQx3/MfwYI9gnRQX0Z5LU87HTxXWGE0Fvji6OZ8JhdS/S7G9SUvpoczIPFpYAp95YqZeY9018LS+DMCf8jMhhqzheBVcowrkjzShMaSaxcb12FT91ObkofUBdMSVJrKHKBuJxp1121L97V6mRPZSwD+l8EUwHI9iEDAAYezmkDw6GSbKbTiYkUAyBk+SMtIiLrN+XIZayiwU+cDD1Vics/TAKVS2loh+XjIZ+xgHalsf1+JXW4zMpMt1HaD2/Z4Gx1XKt8ZuLJRsLwvCd4SSTm7TRK4h0dW6vlEGfTn/zrQ6XxvXG25bNfLWxuEmeZDWcA8srDCnGXWX3G3OfTleS+mU79P4M6TsAu+rUek1KdRo/1/Y87vqysl8260EO56LEGuTYjcb2kendDmHms4+cioOQIQlT3gCnGLiMNh+GejPV2x4lhNqJcpz7QsSk5Uyb/NBBv65+MfYnnp5KSFEMfPIEcrMGfax4QB6iClc=
+  bucket: deploy-weeia
+  upload-dir: daniel.mostowski/webAPP
+
+  acl: public_read
+  on:
+    repo: MarCovy/AWS_ProjectWEB

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AWS Project</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    .center-form{
+          margin-left: auto;
+          margin-right: auto;
+          float: none;
+    }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Wgraj nowy plik</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/list">Lista plików</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <form action="https://<%=bucket%>.s3.amazonaws.com/" method="POST" class="center-form" enctype="multipart/form-data"> 
+                
+                <div >
+                  <% fields.forEach(function(elem){ %>
+                  <input type="hidden" name="<%= elem.name  %>" value="<%=elem.value %>"/>
+                  <%}); %> 
+                  
+                  <div>
+                    <div class="form-group">
+                      <input type="file" name="file">
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+                <p>
+                <div>
+                  <div >
+                    <input type="submit" class="btn btn-primary btn-block" value="Wgraj"/>
+                  </div>
+                </div>
+                </p>
+              </form>
+			  <!-- <form action="http://<%=bucket%>.s3.amazonaws.com/" method="post" enctype="multipart/form-data">
+				Key to upload: 
+				<input type="input"  name="key" value="user/user1/${filename}" /><br />
+				<input type="hidden" name="acl" value="public-read" />
+				<input type="hidden" name="success_action_redirect" value="http://sigv4examplebucket.s3.amazonaws.com/successful_upload.html" />
+				Content-Type: 
+				<input type="input"  name="Content-Type" value="image/jpeg" /><br />
+				<input type="hidden" name="x-amz-meta-uuid" value="14365123651274" /> 
+				<input type="hidden" name="x-amz-server-side-encryption" value="AES256" /> 
+				<input type="text"   name="X-Amz-Credential" value="AKIAIOSFODNN7EXAMPLE/20151229/us-east-1/s3/aws4_request" />
+				<input type="text"   name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" />
+				<input type="text"   name="X-Amz-Date" value="20151229T000000Z" />
+
+				Tags for File: 
+				<input type="input"  name="x-amz-meta-tag" value="" /><br />
+				<input type="hidden" name="Policy" value='<Base64-encoded policy string>' />
+				<input type="hidden" name="X-Amz-Signature" value="<signature-value>" />
+				File: 
+				<input type="file"   name="file" /> <br />
+				<!-- The elements after this will be ignored 
+				<input type="submit" name="submit" value="Upload to Amazon S3" />
+			</form> -->
+			  
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="js/jquery.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
